@@ -7,20 +7,26 @@ function changeAge(id){
 
     document.getElementById("demo").innerHTML = "The id is: " + id + " and the new age is: " + age;
 
+
     if (id && age) { // values are not empty
         $.ajax({
             type: "POST",
-            url: "/cgi-bin/ajax.cgi",
-            dataType: "text",
-            data: "id=" + id + "&age=" + age,
+            url: "/cgi-bin/receive_ajax_request.cgi",
+            dataType: "application/json",
+            data: {
+                'data_id' : id,
+                'data_age': age
+            },
             error: function(){
                 alert("script call was not successful");
             },
-            success: function(){
-                alert("script call was successful");
+            success: function(data){
+                alert("success" + data);
             }
         });  
 
+    } else {
+        alert("script call was not successful");
     }
 
 }

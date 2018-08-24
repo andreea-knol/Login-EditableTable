@@ -65,8 +65,6 @@ while (my ($partID, $age, $gender, $address, $dateTime, $userID) =
 }
 print "</table>\n";
 
-print "<p><input type='submit' name='save_changes' value='SAVE CHANGES'/><p>";
-
 print "<p id='demo'></p>";
 
 print "</body></html>";
