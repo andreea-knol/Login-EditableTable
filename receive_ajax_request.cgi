@@ -12,7 +12,6 @@ print $cgi->header();
 # These variables contain the values received from the AJAX call
 my $id = $cgi->param('data_id'); 
 my $age = $cgi->param('data_age');
-print "Id: $id, age: $age";
 
 update_table();
 
